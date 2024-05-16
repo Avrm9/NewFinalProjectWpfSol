@@ -1,0 +1,269 @@
+﻿<Window x:Class="NewFinalProjectWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NewFinalProjectWpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"  Background="Transparent" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
+
+    <Window.Resources>
+        <Style x:Key="ImageButtonStyle" x:Name="ImageButtonL" TargetType="Button">
+            <Setter Property="Content" Value="League"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Height" Value="70"/>
+            <Setter Property="Width" Value="133"/>
+            <Setter Property="Visibility" Value="Collapsed"/>
+            <Setter Property="Margin" Value="0,10,10,0"/>
+        </Style>
+        <Style x:Key="SButtonStyle"  TargetType="Button">
+            <Setter Property="Content" Value="SpecialTeam"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Visibility" Value="Collapsed"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+
+    </Window.Resources>
+    <Border Background="#181735" >
+
+        <Grid x:Name="MAINGRID">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="DesignGrid" Grid.ColumnSpan="3" Grid.RowSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2.319*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="1.5*"/>
+                    <RowDefinition  Height="5*"/>
+                </Grid.RowDefinitions>
+
+                <!--Pics Design-->
+                <Border  BorderBrush="White" BorderThickness="0,2,0,0" VerticalAlignment="Bottom"  Grid.Row="1" Margin="0,0,0,0" Width="240" HorizontalAlignment="Left"  />
+                <Border Grid.Row="1"  BorderBrush="White" BorderThickness="2,0,0,0" Grid.ColumnSpan="2" Grid.Column="1"   />
+                <Border Grid.Row="2" BorderBrush="White" BorderThickness="2,0,0,0" Grid.ColumnSpan="2" Grid.Column="1"  />
+                <TextBlock x:Name="PicUnder2" VerticalAlignment="Bottom"  Grid.ColumnSpan="2" Grid.Column="0"  Grid.Row="2" Height="120"/>
+                <Button Margin="10 20"  Background="{x:Null}"
+                 ToolTip="Close" x:Name="btnExit" Click="btnExit_Click"/>
+
+
+            </Grid>
+            
+            <Grid x:Name="MenuGrid" Background="#0F0F2D" Grid.ColumnSpan="2" Height="50" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+                <TextBlock Text="Sports:" Background="Transparent" FontSize="15" Foreground="White" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                <Grid.ContextMenu>
+                    <ContextMenu x:Name="SportCon" Visibility="Visible">
+                        <MenuItem Header="Add"  Click="ButtonClickSportMenu"/>
+                        <MenuItem Header="Update"  Click="ButtonClickSportMenu"/>
+                        <MenuItem Header="Delete"  Click="ButtonClickSportMenu"/>
+                    </ContextMenu>
+                </Grid.ContextMenu>
+            </Grid>
+
+            <!--SpecialTeamsStack-->
+            <StackPanel Grid.Row="1" Margin="0,0,28,0" x:Name="AddSpecialTeamStack" Visibility="Collapsed" Orientation="Vertical" VerticalAlignment="Bottom" >
+                <TextBox x:Name="SpecialTeamIdBoxAdd" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"     Text="Enter The Team Id And Delete This Content"   />
+                <TextBox x:Name="SpecialTeamDateBoxAdd" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"    Text="Enter The Team Date And Delete This Content"  />
+                <TextBox x:Name="SpecialTeamTrophiesBoxAdd" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"     Text="Enter The Team Trophies And Delete This Content"  />
+                <TextBox x:Name="SpecialTeamWinsBoxAdd" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"     Text="Enter The Team Wins And Delete This Content"  />
+                <TextBox x:Name="SpecialTeamGoldenBoxAdd" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"     Text="Enter The Team Golden Balls And Delete This Content"  />
+                <TextBox x:Name="SpecialTeamYearPlayersBoxAdd" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"    Text="Enter The Team YearPlayers Total And Delete This Content"  />
+                <Button x:Name="DoneAddButtonSpecial" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"     Content="DONE"  />
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Margin="0,0,28,0" x:Name="UpdateSpecialTeamStack" Visibility="Collapsed"  Orientation="Vertical" VerticalAlignment="Bottom" >
+                <TextBox x:Name="SpecialTeamIdBoxUpdate" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"     Text="Enter The Team Id And Delete This Content"  />
+                <Button  x:Name="DoneUpdateButtonSpecial" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"    Content="DONE"  />
+            </StackPanel>
+            <StackPanel Grid.Row="1" Margin="0,0,28,0" x:Name="UpdateSpecialTeamStackInfo" Visibility="Collapsed"  Orientation="Vertical" VerticalAlignment="Bottom" >
+                <TextBox x:Name="SpecialTeamIdBoxUpdateSec" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"     Text="Enter The Team Id And Delete This Content"  />
+                <TextBox x:Name="SpecialTeamDateBoxUpdateSec" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"     Text="Enter The Team Date And Delete This Content"  />
+                <TextBox x:Name="SpecialTeamTrophiesBoxUpdateSec" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"    Text="Enter The Team Trophies And Delete This Content" />
+                <TextBox x:Name="SpecialTeamWinsBoxUpdateSec" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"     Text="Enter The Team Wins And Delete This Content"  />
+                <TextBox x:Name="SpecialTeamGoldenBoxUpdateSec" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"    Text="Enter The Team Golden Balls And Delete This Content"  />
+                <TextBox x:Name="SpecialTeamYearPlayersBoxUpdateSec" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"     Text="Enter The Team YearPlayers Total And Delete This Content"  />
+                <Button  x:Name="DoneUpdateButtonSpecialSec" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"    Content="DONE"  />
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Margin="0,0,28,0" x:Name="DelSpecialTeamStack" Visibility="Collapsed" Orientation="Vertical" VerticalAlignment="Bottom" >
+                <TextBox x:Name="SpecialTeamIdBoxDel" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Team Id And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+                <Button  x:Name="DoneDelButtonSpecial" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Content="DONE" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            </StackPanel>
+
+            <!--Description Stats-->
+            <StackPanel Grid.Row="1" Margin="0,0,28,0" >
+                <StackPanel Orientation="Vertical" x:Name="StackPanelDesc" Width="217" HorizontalAlignment="Left">
+
+                    <TextBlock Text="Description:" Margin="10" Foreground="White" FontSize="20" FontWeight="Medium" />
+                    <TextBlock x:Name="DescriptionBox" Text="none" Margin="10" FontStyle="Italic" Foreground ="White" FontSize = "15"/>
+                </StackPanel>
+
+                <TextBlock Text="SpecialTeams" Margin="10,10,0,0" HorizontalAlignment="Center" Foreground="White" FontSize="20" TextDecorations="Underline"/>
+
+                <StackPanel Orientation="Vertical" x:Name="StackSpecialTeams" Margin="0,30,0,0" Width="217" Height="233">
+                    <Button x:Name="sb1" Style="{StaticResource SButtonStyle}"/>
+                    <Button x:Name="sb2" Style="{StaticResource SButtonStyle}"/>
+                    <Button x:Name="sb3" Style="{StaticResource SButtonStyle}"/>
+                    <Button x:Name="sb4" Style="{StaticResource SButtonStyle}"/>
+                    <Button x:Name="sb5" Style="{StaticResource SButtonStyle}"/>
+                    <Button x:Name="sb6" Style="{StaticResource SButtonStyle}"/>
+                    <Button x:Name="sb7" Style="{StaticResource SButtonStyle}"/>
+                    <Button x:Name="sb8" Style="{StaticResource SButtonStyle}"/>
+                </StackPanel>
+                <StackPanel.ContextMenu >
+                    <ContextMenu x:Name="SpecialCon"  Visibility="Visible">
+                        <MenuItem Header="AddSpecialTeam"  Click="ButtonClickSpecialTeamMenu"/>
+                        <MenuItem Header="UpdateSpecialTeam"  Click="ButtonClickSpecialTeamMenu"/>
+                        <MenuItem Header="DeleteSpecialTeam"  Click="ButtonClickSpecialTeamMenu"/>
+                    </ContextMenu>
+                </StackPanel.ContextMenu>
+
+
+            </StackPanel>
+
+            <!--Leagues Stack-->
+            <StackPanel Grid.Row="2" Grid.Column="2" >
+                <WrapPanel>
+                    <TextBlock Text="Leagues:" Margin="0,10,100,0" Foreground="White" FontSize="20" FontWeight="Medium" />
+                    <Button x:Name="UserButton" Width="200" Content="USERS PERMITIONS" Foreground="White" FontSize="20" Background="Transparent" Visibility="Visible" Click="ButtonClickUsers"/>
+                </WrapPanel>
+                
+                <StackPanel Orientation="Horizontal"/>
+
+            </StackPanel>
+            <Grid Grid.Row="2" Grid.Column="2" x:Name="LeaguesGrid" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+                <Grid.ContextMenu>
+                    <ContextMenu x:Name="LeagueCon" Visibility="Visible">
+                        <MenuItem Header="AddLeague"  Click="ButtonClickLeagueMenu"/>
+                        <MenuItem Header="UpdateLeague"  Click="ButtonClickLeagueMenu"/>
+                        <MenuItem Header="DeleteLeague"  Click="ButtonClickLeagueMenu"/>
+                    </ContextMenu>
+                </Grid.ContextMenu>
+
+                <WrapPanel x:Name="leaguewrap" Grid.Row="2" Orientation="Horizontal" >
+                    <Button x:Name="lb1" Style="{StaticResource ImageButtonStyle}"/>
+                    <Button x:Name="lb2" Style="{StaticResource ImageButtonStyle}"/>
+                    <Button x:Name="lb3" Style="{StaticResource ImageButtonStyle}"/>
+                    <Button x:Name="lb4" Style="{StaticResource ImageButtonStyle}"/>
+                    <Button x:Name="lb5" Style="{StaticResource ImageButtonStyle}"/>
+                    <Button x:Name="lb6" Style="{StaticResource ImageButtonStyle}"/>
+                    <Button x:Name="lb7" Style="{StaticResource ImageButtonStyle}"/>
+                    <Button x:Name="lb8" Style="{StaticResource ImageButtonStyle}"/>
+                    <Button x:Name="lb9" Style="{StaticResource ImageButtonStyle}"/>
+                    <Button x:Name="lb10" Style="{StaticResource ImageButtonStyle}"/>
+                    <Button x:Name="lb11" Style="{StaticResource ImageButtonStyle}"/>
+                    <Button x:Name="lb12" Style="{StaticResource ImageButtonStyle}"/>
+
+                </WrapPanel>
+            </Grid>
+
+            
+            <Grid Grid.Row="2" Grid.Column="2" x:Name="GridLeagues">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+
+                <!--SPORT STACKS TEXTBOXES-->
+                <StackPanel x:Name="AddSportStack" Visibility="Collapsed" Orientation="Vertical" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Grid.RowSpan="2">
+                    <TextBox FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"  x:Name="SportTextBoxAdd" Grid.Column="0" Text="Enter The Sport Name And Delete This Content" Grid.Row="0" Height="40" />
+                    <TextBox FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"  x:Name="SportTextBoxDescriptionAdd" Text="Enter The Sport Description And Delete This Content" Grid.Column="0"  Height="40"   Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                    <Button x:Name="DoneAddButton" Content="Done" Grid.Column="0" Grid.Row="1" Height="30" />
+                </StackPanel>
+
+
+                <StackPanel x:Name="UpdateSportStack" Visibility="Collapsed" Orientation="Vertical" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Grid.RowSpan="2">
+                    <TextBox x:Name="TextBoxOldSport" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Text="Enter The Sport Name You Want To Update And Delete This Content" Grid.Column="0"  Height="40"   Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                    <Button x:Name="DoneUpdateButton" Content="Done" Grid.Column="0" Grid.Row="1" Height="30" />
+
+                </StackPanel>
+
+                <StackPanel x:Name="UpdateSportStackSec" Visibility="Collapsed" Orientation="Vertical" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Grid.RowSpan="2">
+                    <TextBox FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"  x:Name="t1" Text="mone" FontSize="15" Height="40" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                    <TextBox FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"  x:Name="t2" Text="mone"  FontSize="15" Height="40" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                    <Button x:Name="DoneUpdateButtonContinue" Content="Done" Grid.Column="0" Grid.Row="1" Height="30"/>
+                </StackPanel>
+
+                <StackPanel x:Name="DelSportStack" Visibility="Collapsed" Orientation="Vertical" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Grid.RowSpan="2">
+                    <TextBox x:Name="TextBoxOldSportSec" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5" Text="Enter The Sport Name You Want To Delete And Delete This Content" Grid.Column="0"  Height="40"   Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                    <Button x:Name="DoneDeleteButton" Content="Done" Grid.Column="0" Grid.Row="1" Height="30" />
+                </StackPanel>
+
+
+
+                <!--lEAGUES STACKS TEXTBOXES-->
+                <StackPanel x:Name="AddLeagueStack" Visibility="Collapsed" Orientation="Vertical" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Grid.RowSpan="2">
+                    <TextBox FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"  x:Name="LeagueTextBoxAdd" Grid.Column="0" Text="Enter The League Name And Delete This Content" Grid.Row="0" Height="40"  />
+                    <TextBox FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"  x:Name="LeaugeTextBoxSportIdAdd" Text="Enter The Sport Id And Delete This Content" Grid.Column="0"  Height="40"   Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                    <Button x:Name="LeagueDoneAddButton" Content="Done" Grid.Column="0" Grid.Row="1" Height="30" />
+                </StackPanel>
+
+                <StackPanel x:Name="UpdateLeagueStack" Visibility="Collapsed" Orientation="Vertical" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Grid.RowSpan="2">
+
+                    <TextBox x:Name="TextBoxOldLeague" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Text="Enter The leaguename Name You Want To Update And Delete This Content" Grid.Column="0"  Height="40"   Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                    <Button x:Name="LeagueDoneUpdateButton" Content="Done" Grid.Column="0" Grid.Row="1" Height="30" />
+
+                </StackPanel>
+                <StackPanel x:Name="UpdateLeagueStackSec" Visibility="Collapsed" Orientation="Vertical" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Grid.RowSpan="2">
+                    <TextBox FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"  x:Name="t1l" Text="mone"  FontSize="15" Height="40" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                    <TextBox FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"  x:Name="t2l" Text="mone"  FontSize="15" Height="40" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                    <Button x:Name="DoneUpdateButtonContinueLeague" Content="Done" Grid.Column="0" Grid.Row="1" Height="30" />
+                </StackPanel>
+
+                <StackPanel x:Name="DelLeagueStack" Visibility="Collapsed" Orientation="Vertical" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Grid.RowSpan="2">
+                    <TextBox x:Name="TextBoxOldLeagueSec" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5" Text="Enter The League Name You Want To Delete And Delete This Content" Grid.Column="0"  Height="40"   Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                    <Button x:Name="LeagueDoneDeleteButton" Content="Done" Grid.Column="0" Grid.Row="1" Height="30"/>
+                </StackPanel>
+
+
+
+            </Grid>
+
+            <!--Pages Frames-->
+            <Frame Visibility="Hidden" x:Name="LeagueFrame"   Background="Transparent" BorderThickness="0" NavigationUIVisibility="Hidden"  Grid.ColumnSpan="3" Grid.RowSpan="2">
+
+            </Frame>
+            <Frame Visibility="Hidden" x:Name="TeamFrame"   Background="Transparent" BorderThickness="0" NavigationUIVisibility="Hidden"  Grid.ColumnSpan="3" Grid.RowSpan="2">
+
+            </Frame>
+            <Frame Visibility="Hidden" x:Name="UserFrame"   Background="Transparent" BorderThickness="0" NavigationUIVisibility="Hidden"  Grid.ColumnSpan="3" Grid.RowSpan="2">
+
+            </Frame>
+
+        </Grid>
+
+    </Border>
+
+</Window>
+
+    

@@ -1,0 +1,165 @@
+﻿<Page x:Class="NewFinalProjectWpf.LeaguePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:NewFinalProjectWpf"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="LeaguePage" x:Name="PageThis" Background="DeepSkyBlue">
+
+
+    
+    
+    <Grid x:Name="MainGrid">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="DesignG" Grid.ColumnSpan="3" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="PicUnder" Grid.Row="1" />
+
+        </Grid>
+
+
+        <!--Headers-->
+        <TextBlock x:Name="HeaderBlock" Text="League"  FontSize="30"  HorizontalAlignment="Center" Grid.Column="1" FontWeight="Bold" />
+        <TextBlock Text="Special Teams Of The League" FontSize="19" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontStyle="Italic"  FontWeight="Bold" />
+        <TextBlock Text="Teams" FontSize="20" VerticalAlignment="Bottom" HorizontalAlignment="Center"  FontWeight="Bold" FontStyle="Italic" Grid.Column="2"/>
+        <TextBlock Text="League Matches Summery" FontSize="19" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontStyle="Italic"  FontWeight="Bold" Grid.Column="1"/>
+        <Border Grid.Row="1"  Grid.ColumnSpan="3"  Grid.Column="0" BorderBrush="Black" BorderThickness="1,1,0,0" />
+        <Border Grid.Column="1" Grid.Row="1" BorderBrush="Black" BorderThickness="1,0,0,0" VerticalAlignment="Stretch" />
+        <Border Grid.Column="2" Grid.Row="1" BorderBrush="Black" BorderThickness="1,0,0,0" VerticalAlignment="Stretch" />
+
+        <!--TeamsStack-->
+        <StackPanel x:Name="AddSTeamStack" Visibility="Collapsed" Orientation="Vertical" VerticalAlignment="Bottom" Grid.Column="2" Grid.Row="1">
+            <TextBox x:Name="TeamNameBoxADD" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Team Name And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            <TextBox x:Name="TeamLeagueBoxADD" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Team League ID And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            <TextBox x:Name="TeamColorBoxADD" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Team Color And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            <Button x:Name="TeamAddButton" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Content="DONE" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+        </StackPanel>
+
+
+        <StackPanel x:Name="UpdateSTeamStack" Visibility="Collapsed" Orientation="Vertical" VerticalAlignment="Bottom" Grid.Column="2" Grid.Row="1">
+            <TextBox x:Name="TeamNameBoxUpdate" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Team Name And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            <Button x:Name="TeamUpdateButton" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Content="DONE" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+        </StackPanel>
+        <StackPanel x:Name="UpdateSTeamStackInfo" Visibility="Collapsed" Orientation="Vertical" VerticalAlignment="Bottom" Grid.Column="2" Grid.Row="1">
+            <TextBox x:Name="TeamNameBoxUpdateSec" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Team Name And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            <TextBox x:Name="TeamLeagueBoxUpdateSec" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Team League ID And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            <TextBox x:Name="TeamColorBoxUpdateSec" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Team Color And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            <Button x:Name="TeamUpdateButtonSec" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Content="DONE" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+        </StackPanel>
+        
+        <StackPanel x:Name="DelTeamStack" Visibility="Collapsed" Orientation="Vertical" VerticalAlignment="Bottom" Grid.Column="2" Grid.Row="1">
+            <TextBox x:Name="TeamNameBoxDelete" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Team Name And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            <Button x:Name="TeamDeleteButton" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Content="DONE" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+        </StackPanel>
+        <!--SpecialTeamsStack-->
+
+        <StackPanel x:Name="AddSpecialTeamStack" Visibility="Collapsed" Orientation="Vertical" VerticalAlignment="Bottom" Grid.Column="0" Grid.Row="1">
+            <TextBox x:Name="SpecialTeamIdBoxAdd" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Team Id And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            <TextBox x:Name="SpecialTeamDateBoxAdd" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Team Date And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            <TextBox x:Name="SpecialTeamTrophiesBoxAdd" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Team Trophies And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            <TextBox x:Name="SpecialTeamWinsBoxAdd" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Team Wins And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            <TextBox x:Name="SpecialTeamGoldenBoxAdd" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Team Golden Balls And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            <TextBox x:Name="SpecialTeamYearPlayersBoxAdd" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Team YearPlayers Total And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            <Button x:Name="DoneAddButtonSpecial" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Content="DONE" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+        </StackPanel>
+
+        <StackPanel x:Name="UpdateSpecialTeamStack" Visibility="Collapsed"  Orientation="Vertical" VerticalAlignment="Bottom" Grid.Column="0" Grid.Row="1">
+            <TextBox x:Name="SpecialTeamIdBoxUpdate" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Team Id And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            <Button  x:Name="DoneUpdateButtonSpecial" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Content="DONE" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+        </StackPanel>
+        <StackPanel x:Name="UpdateSpecialTeamStackInfo" Visibility="Collapsed"  Orientation="Vertical" VerticalAlignment="Bottom" Grid.Column="0" Grid.Row="1">
+            <TextBox x:Name="SpecialTeamIdBoxUpdateSec" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Team Id And Delete This Content" Grid.Row="1" Height="30" Grid.ColumnSpan="2" />
+            <TextBox x:Name="SpecialTeamDateBoxUpdateSec" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Team Date And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            <TextBox x:Name="SpecialTeamTrophiesBoxUpdateSec" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Team Trophies And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            <TextBox x:Name="SpecialTeamWinsBoxUpdateSec" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Team Wins And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            <TextBox x:Name="SpecialTeamGoldenBoxUpdateSec" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Team Golden Balls And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            <TextBox x:Name="SpecialTeamYearPlayersBoxUpdateSec" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Team YearPlayers Total And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            <Button  x:Name="DoneUpdateButtonSpecialSec" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Content="DONE" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+        </StackPanel>
+
+        <StackPanel x:Name="DelSpecialTeamStack" Visibility="Collapsed" Orientation="Vertical" VerticalAlignment="Bottom" Grid.Column="0" Grid.Row="1">
+            <TextBox x:Name="SpecialTeamIdBoxDel" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Team Id And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            <Button  x:Name="DoneDelButtonSpecial" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Content="DONE" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+        </StackPanel>
+
+        <!--MatchesStacks-->
+        <StackPanel x:Name="AddMatchStack" Visibility="Collapsed" Orientation="Vertical" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="1">
+            <TextBox x:Name="MatchDateBoxAdd" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Match Date And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            <TextBox x:Name="MatchWinnerTeamAdd" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Match Winner Team Id And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            <TextBox x:Name="MatchLeagueIdAdd" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Match League Id And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            <TextBox x:Name="MatchTimeAdd" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Match Time And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            <Button x:Name="DoneAddButtonMatch" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Content="DONE" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+        </StackPanel>
+        <StackPanel  x:Name="UpdateMatchStack" Visibility="Collapsed" Orientation="Vertical" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="1">
+            <TextBox x:Name="MatchIdBoxUpdate" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Match Id And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            <Button x:Name="DoneUpdateButtonMatch" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Content="DONE" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            </StackPanel>
+        <StackPanel x:Name="UpdateMatchStackInfo" Visibility="Collapsed"  Orientation="Vertical" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="1">
+            <TextBox x:Name="MatchIdBoxUpdateSec" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Match Id And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            <TextBox x:Name="MatchDateBoxUpdateSec" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Match Date And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            <TextBox x:Name="MatchWinnerTeamUpdateSec" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Match Winner Team Id And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            <TextBox x:Name="MatchLeagueIdUpdateSec" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Match League Id And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            <TextBox x:Name="MatchTimeUpdateSec" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Match Time And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            <Button x:Name="DoneUpdateButtonMatchSec" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Content="DONE" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+        </StackPanel>
+        
+        <StackPanel x:Name="DelMatchStack" Visibility="Collapsed" Orientation="Vertical" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="1">
+            <TextBox x:Name="MatchIdBoxDel" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Text="Enter The Match Id And Delete This Content" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+            <Button x:Name="DoneDelButtonMatch" FontStyle="Italic" BorderBrush="#1565C0" BorderThickness="2" Foreground="White" Background="#1E88E5"   Grid.Column="1"  Content="DONE" Grid.Row="1" Height="30"  Grid.ColumnSpan="2" />
+        </StackPanel>
+        
+        <!--ContexesMenus-->
+
+        <StackPanel x:Name="StackSpecialTeams" Grid.Row="1" Grid.Column="0" Orientation="Vertical">
+            <TextBlock Height="20"/>
+            <StackPanel.ContextMenu>
+                <ContextMenu x:Name="SpecialCon" Visibility="Visible">
+                    <MenuItem Header="AddSpecialTeam"  Click="ButtonClickSpecialTeamMenu"/>
+                    <MenuItem Header="UpdateSpecialTeam"  Click="ButtonClickSpecialTeamMenu"/>
+                    <MenuItem Header="DeleteSpecialTeam"  Click="ButtonClickSpecialTeamMenu"/>
+                </ContextMenu>
+            </StackPanel.ContextMenu>
+        </StackPanel>
+        
+        <StackPanel x:Name="StackTeams" Grid.Row="1" Grid.Column="2" Orientation="Vertical">
+            <TextBlock Height="20"/>
+            <StackPanel.ContextMenu>
+                <ContextMenu x:Name="TeamCon" Visibility="Visible">
+                    <MenuItem Header="AddTeam"  Click="ButtonClickTeamMenu"/>
+                    <MenuItem Header="UpdateTeam"  Click="ButtonClickTeamMenu"/>
+                    <MenuItem Header="DeleteTeam"  Click="ButtonClickTeamMenu"/>
+                </ContextMenu>
+            </StackPanel.ContextMenu>
+        </StackPanel>
+        <StackPanel x:Name="StackMatch" Grid.Row="1" Grid.Column="1" Orientation="Vertical">
+            <TextBlock Height="20"/>
+            <StackPanel.ContextMenu>
+                <ContextMenu x:Name="MatchCon" Visibility="Visible">
+                    <MenuItem Header="AddMatch"  Click="ButtonClickMatchMenu"/>
+                    <MenuItem Header="UpdateMatch"  Click="ButtonClickMatchMenu"/>
+                    <MenuItem Header="DeleteMatch"  Click="ButtonClickMatchMenu"/>
+                </ContextMenu>
+            </StackPanel.ContextMenu>
+        </StackPanel>
+
+        <Frame Visibility="Hidden" x:Name="TeamFrame"   Background="Transparent" BorderThickness="0" NavigationUIVisibility="Hidden"  Grid.ColumnSpan="3" Grid.RowSpan="2">
+
+        </Frame>
+    </Grid>
+</Page>

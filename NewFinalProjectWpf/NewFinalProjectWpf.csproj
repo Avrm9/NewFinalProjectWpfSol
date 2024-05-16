@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MahApps.Metro.IconPacks.Material" Version="4.11.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="APIService">
+      <HintPath>..\..\SolModel\SolModel\SolModel\APIService\bin\Debug\net7.0\APIService.dll</HintPath>
+    </Reference>
+    <Reference Include="Model">
+      <HintPath>..\..\SolModel\SolModel\SolModel\Model\bin\Debug\net7.0\Model.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
